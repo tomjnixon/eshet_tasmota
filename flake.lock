@@ -1,0 +1,96 @@
+{
+  "nodes": {
+    "eshetpy": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "utils": "utils",
+        "yarp_src": "yarp_src"
+      },
+      "locked": {
+        "lastModified": 1704676965,
+        "narHash": "sha256-QlYhkdj/C3xcWnT+fdb+rzCO5De5TBU5njWaJLyM1BA=",
+        "owner": "tomjnixon",
+        "repo": "eshet.py",
+        "rev": "0c0dd096bf748cda7bb4f34e172fe3f6e9adb3a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tomjnixon",
+        "ref": "main",
+        "repo": "eshet.py",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1706006310,
+        "narHash": "sha256-nDPz0fj0IFcDhSTlXBU2aixcnGs2Jm4Zcuoj0QtmiXQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b43bb235efeab5324c5e486882ef46749188eee2",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "root": {
+      "inputs": {
+        "eshetpy": "eshetpy",
+        "nixpkgs": "nixpkgs",
+        "utils": "utils_2"
+      }
+    },
+    "utils": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "utils_2": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "yarp_src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1702598936,
+        "narHash": "sha256-yOI8JHPQOA9GlerBniKMUHIADHkThWriJhy/cybGoDg=",
+        "owner": "tomjnixon",
+        "repo": "yarp",
+        "rev": "c7c4ed739ce254d5850a1561edbf60c1e86f7084",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tomjnixon",
+        "repo": "yarp",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
