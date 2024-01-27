@@ -3,7 +3,7 @@ import eshet
 from eshet import Unknown
 from eshet.utils import in_task
 from eshet.yarp import state_register, state_observe, replace_unknown
-from yarp import Value, Event, no_repeat, fn
+from yarp import Value, no_repeat
 from yarp.utils import on_value
 import json
 
