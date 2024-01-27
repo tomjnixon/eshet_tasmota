@@ -126,24 +126,21 @@ class TasmotaInterface:
             await state_observe("power_in", client=self.client), self.default
         )
 
-        if self.repeat_time:
+        if self.repeat_time is not None:
             self.power_in = repeat_last(self.power_in, self.repeat_time)
 
+        @in_task
         async def set_power(value):
             await self.publish("cmnd", "Power", b"1" if value else b"0")
 
-        @in_task
-        async def set_power_from_states(connected, power_in):
-            if connected and power_in is not None:
-                await set_power(power_in)
+        def set_power_from_states(_ignored=None):
+            if self.connected.value and self.power_in.value is not None:
+                set_power(self.power_in.value)
 
-        @on_value(self.power_in)
-        def on_power_in(power_in):
-            set_power_from_states(self.connected.value, power_in)
+        self.power_in.on_value_changed(set_power_from_states)
+        self.connected.on_value_changed(set_power_from_states)
 
-        @self.connected.on_value_changed
-        def on_connected(connected):
-            set_power_from_states(connected, self.power_in.value)
+        set_power_from_states()
 
     async def setup_power_out(self):
         power_out = Value(eshet.Unknown)
