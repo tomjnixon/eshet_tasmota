@@ -96,6 +96,22 @@ If `--button-event` is specified, this will emit strings like
 This will normally require `--config SetOption73 1` to publish MQTT messages on
 button presses instead of changing the state.
 
+## Reconnection
+
+If the MQTT connection between the interface and the MQTT server fails it will
+not be reconnected, so this should be ran in something that restarts it on
+failure.
+
+This doesn't use a LWT message to turn the plug off (or on) if the interface
+fails. This is intended behaviour; if you need that, use `PulseTime`,
+`PowerOnState` and `--repeat`.
+
+If the plug disconnects, (or is not connected on startup), output states will
+be set to unknown, and the power state will be correctly set when it
+reconnects.
+
+ESHET reconnection should just work.
+
 ## License
 
 ```
