@@ -15,6 +15,9 @@ DEFAULT_CONFIG = dict(
     TelePeriod=10,
     PowerOnState=0,  # off on power up
     PulseTime=0,
+    # more resolution
+    EnergyRes=5,
+    WattRes=3,
 )
 
 
