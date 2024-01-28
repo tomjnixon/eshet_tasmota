@@ -29,6 +29,27 @@ options:
                         set a configuration on connection (default: [])
 ```
 
+A typical use would look something like:
+
+```shell
+eshet_tasmota /tasmota_test '{prefix}/tasmota_ABCDEF/{command}'
+```
+
+Then to set the state:
+
+```shell
+eshet publish /tasmota_test/power_in true  # or false
+```
+
+Or observe the current state:
+
+```shell
+eshet observe /tasmota_test/power_out
+```
+
+To configure the ESHET server this uses the same `ESHET_SERVER` environment
+variable as other ESHET components.
+
 ## Configuration
 
 Tasmota has many, many (many) options, and no clean way to query them all or
