@@ -223,6 +223,7 @@ async def run(args):
 
     async with aiomqtt.Client(args.host, port=args.port) as mqtt_client:
         eshet_client = eshet.Client(base=args.eshet_base)
+        await eshet_client.wait_for_connection()
 
         await TasmotaInterface(
             eshet_client,
